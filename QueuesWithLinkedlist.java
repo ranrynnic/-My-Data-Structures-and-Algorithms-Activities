@@ -16,35 +16,35 @@ class Queue {
         this.front = this.rear = null; // I-set ang front ug rear nga walay sulod (null)
     }
 
-    // Metodo para mag-enqueue (magdugang og elemento sa queue)
+    // Method para mag-enqueue (magdugang og element sa queue)
     public void enqueue(int data) {
-        Node newNode = new Node(data); // Maghimo og bag-ong node nga mag-contain sa data
+        Node newNode = new Node(data); 
         if (this.rear == null) { // Kung ang queue walay sulod
-            this.front = this.rear = newNode; // I-set ang front ug rear nga mao ra ang bag-ong node
-            System.out.println(data + " enqueued to queue"); // Ipakita nga gi-enqueue ang elemento
+            this.front = this.rear = newNode; 
+            System.out.println(data + " enqueued to queue");
             return;
         }
         this.rear.next = newNode; // I-link ang bag-ong node sa rear
         this.rear = newNode; // I-update ang rear nga mao ang bag-ong node
     }
 
-    // Metodo para mag-dequeue (kuhaon ang elemento gikan sa front sa queue)
+    // Method para mag-dequeue (kuhaon ang element gikan sa front sa queue)
     public void dequeue() {
         if (this.front == null) { // Kung walay sulod ang queue
             System.out.println("Queue is empty"); // Ipakita nga walay sulod ang queue
             return;
         }
 
-        int dequeuedValue = this.front.data; // Ikuha ang value sa front nga elemento
+        int dequeuedValue = this.front.data; // Ikuha ang value sa front nga element
         this.front = this.front.next; // I-update ang front nga mao na ang sunod nga node
 
         if (this.front == null) { // Kung walay sunod nga node, i-set ang rear sa null
             this.rear = null;
         }
-        System.out.println(dequeuedValue + " dequeued from queue"); // Ipakita nga gi-dequeue ang elemento
+        System.out.println(dequeuedValue + " dequeued from queue"); // Ipakita nga gi-dequeue ang element
     }
 
-    // Metodo para tan-awon (peek) ang elemento sa front
+    // Metodo para tan-awon (peek) ang element sa front
     public int peek() {
         if (this.front == null) { // Kung walay sulod ang queue
             System.out.println("Queue is empty"); // Ipakita nga empty ang queue
@@ -53,12 +53,12 @@ class Queue {
         return this.front.data; // Ibalik ang data sa front
     }
 
-    // Metodo para pagsusi kung ang queue kay empty (walay sulod)
+    // Method para pagsusi kung ang queue kay empty (walay sulod)
     public boolean isEmpty() {
         return this.front == null; // Mobalik og true kung ang front kay null (walay sulod)
     }
 
-    // Metodo para ipakita ang mga elemento sa queue
+    // Method para ipakita ang mga element sa queue
     public void printQueue() {
         if (this.front == null) { // Kung walay sulod ang queue
             System.out.println("Queue is empty"); // Ipakita nga empty ang queue
@@ -81,15 +81,15 @@ public class QueuesWithLinkedlist {
         queue.enqueue(10); // I-enqueue ang 10
         queue.enqueue(20); // I-enqueue ang 20
         queue.enqueue(30); // I-enqueue ang 30
-        queue.printQueue(); // Ipakita ang mga elemento sa queue
+        queue.printQueue(); // Ipakita ang mga element sa queue
 
-        System.out.println("Front element is " + queue.peek()); // Ipakita ang elemento sa front
+        System.out.println("Front element is " + queue.peek()); // Ipakita ang element sa front
 
-        queue.dequeue(); // I-dequeue ang usa ka elemento
-        queue.dequeue(); // I-dequeue pag-usab ang usa ka elemento
+        queue.dequeue(); // I-dequeue ang usa ka element
+        queue.dequeue(); // I-dequeue pag-usab ang usa ka element
         queue.enqueue(100); // I-enqueue ang 100
 
-        queue.printQueue(); // Ipakita pag-usab ang mga elemento sa queue
+        queue.printQueue(); // Ipakita pag-usab ang mga element sa queue
         System.out.println("Front element is " + queue.peek()); // Ipakita ang elemento sa front
     }
 }
