@@ -1,7 +1,7 @@
-import java.util.Scanner; // Import sa Scanner class para sa input gikan sa user
+import java.util.Scanner; 
 public class InsertionSort {
 
-    // Metodo para sa pag-perform og Insertion Sort
+    // Method para sa pag-perform og Insertion Sort
     public static void InsertionSort(int[] array) {
         for(int a = 0; a < array.length; a++) {
             int key = array[a]; // Ang elemento nga i-insert
@@ -9,8 +9,8 @@ public class InsertionSort {
 
             // While loop nga mutan-aw kung ang previous nga elemento mas dako sa "key"
             while(b >= 0 && array[b] > key) {
-                array[b+1] = array[b]; // Ibalhin ang elemento nga mas dako sa "key" ngadto sa sunod nga posisyon
-                b--; // I-decrement ang index aron ibalhin ang kasunod nga elemento
+                array[b+1] = array[b]; 
+                b--; // 
             }
             array[b+1] = key; // I-insert ang "key" sa iyang husto nga posisyon
         }
@@ -27,7 +27,7 @@ public class InsertionSort {
         // I-input ang mga elemento sa array
         System.out.println("Enter an elements of an array:");
         for(int a = 0; a < size; a++) {
-            array[a] = sc.nextInt(); // Kuhaon ang matag elemento sa user ug i-store sa array
+            array[a] = sc.nextInt(); // Kuhaon ang matag element sa user ug i-store sa array
         }
 
         // Pag-perform og Insertion Sort
@@ -36,10 +36,10 @@ public class InsertionSort {
         // Ipakita ang resulta sa sorted nga array
         System.out.print("Sorted Array: ");
         for(int a = 0; a < size; a++) {
-            System.out.print(array[a] + " "); // I-print ang matag sorted nga elemento
+            System.out.print(array[a] + " "); // I-print ang matag sorted nga element
         }
 
-        // Magbutang og bagong linya
+      
         System.out.println();
     }
 }
