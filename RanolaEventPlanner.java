@@ -1,7 +1,7 @@
 import java.util.Hashtable;
 import java.util.Scanner;
 
-public class EventPlanner {
+public class RanolaEventPlanner {
     public static void main(String[] args) {
         Hashtable<String, String> events = new Hashtable<>();
         Scanner scanner = new Scanner(System.in);
